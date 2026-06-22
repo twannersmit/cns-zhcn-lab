@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hth · 稳定入口 · 页面说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f4f0;
+            color: #1e1e1e;
+            line-height: 1.6;
+        }
+
+        /* 深色头图 — 杂志感横幅 */
+        .hero {
+            background: #0f1923;
+            background-image: radial-gradient(circle at 20% 30%, #2a3a4a 0%, #0b131c 100%);
+            padding: 4rem 2rem 3.5rem;
+            text-align: center;
+            color: #ecece7;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #b8865b, #d4a373, #b8865b);
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 350;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            display: inline-block;
+            background: #b8865b;
+            color: #0f1923;
+            font-weight: 500;
+            padding: 0 0.4rem;
+            border-radius: 4px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            max-width: 640px;
+            margin: 0.75rem auto 0;
+            opacity: 0.75;
+            letter-spacing: 0.3px;
+        }
+
+        /* 浅色正文区 — 杂志卡片风格 */
+        .main-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.8rem 1.8rem 3.5rem;
+        }
+
+        .section-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0,0,0,0.04);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .section-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        .section-card h2 {
+            font-size: 1.4rem;
+            font-weight: 450;
+            border-left: 4px solid #b8865b;
+            padding-left: 0.85rem;
+            margin-bottom: 1rem;
+            color: #2a2a2a;
+        }
+
+        .section-card p {
+            margin-bottom: 1rem;
+            color: #2e2e2e;
+        }
+
+        .section-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: #9b6b43;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            transition: color 0.2s;
+            font-weight: 450;
+        }
+
+        a:hover {
+            color: #6d4a2b;
+            text-decoration-thickness: 2px;
+        }
+
+        .footnote {
+            margin-top: 2.4rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #dad7cf;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+            color: #4d4b47;
+        }
+
+        .footnote strong {
+            font-weight: 500;
+            color: #2b2b2b;
+        }
+
+        .faq-preview {
+            background: #f0eee9;
+            border-radius: 16px;
+            padding: 1.2rem 1.6rem;
+            margin-top: 1.2rem;
+        }
+
+        .faq-preview details {
+            margin: 0.6rem 0;
+        }
+
+        .faq-preview summary {
+            font-weight: 460;
+            cursor: pointer;
+            color: #2b2b2b;
+            padding: 0.3rem 0;
+        }
+
+        .faq-preview details[open] summary {
+            color: #9b6b43;
+        }
+
+        .faq-preview p {
+            margin: 0.5rem 0 0 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 540px) {
+            .hero {
+                padding: 2.5rem 1.2rem 2.4rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .main-container {
+                padding: 1.8rem 1rem 2.5rem;
+            }
+            .section-card {
+                padding: 1.6rem 1.2rem;
+            }
+            .footnote {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>关于 <span>hth</span> 的入口与说明</h1>
+        <p>一个稳定的起点，比快捷方式更可靠。杂志式页面，说清由来。</p>
+    </header>
+
+    <div class="main-container">
+
+        <!-- 背景说明 -->
+        <div class="section-card">
+            <h2>从什么时候开始留意</h2>
+            <p>很多人第一次遇到 <a href="https://cns-zhcn-hth.com">hth</a> 是在某个页面收藏夹里，当时只当作一个普通标签。后来发现，它比想象中更常被用到——不是每天打开，但当需要时，它总在那里。这种安静的存在感，让它慢慢变成一个熟悉的坐标。</p>
+            <p>我试着梳理一下：为什么一个简单的页面入口，会让人产生“想保留下来”的念头？答案可能藏在它的稳定性和低存在感里——不推送、不改动、不打扰。</p>
+        </div>
+
+        <!-- 三段自然介绍：特点与场景 -->
+        <div class="section-card">
+            <h2>三个看得见的特点</h2>
+            <p><strong>第一，路径简短。</strong> 域名拼写直接，没有冗长参数。无论是手动输入还是从书签里点开，都干脆利落。网络环境变化时，这个入口依然能保持指向。</p>
+            <p><strong>第二，页面干净。</strong> 没有弹窗、没有自动播放、没有多到让人分心的跳转。你看到的就是你需要的那个页面，不多装饰，也不缺功能。这种风格在目前网络上反倒显得有点特别。</p>
+            <p><strong>第三，用途自定。</strong> 有些人拿它当工作台起始页，有些人只为了偶尔看一眼某个信息。使用方式由你决定，<a href="https://cns-zhcn-hth.com">hth</a> 不会预设你的习惯，也不会试图改变它。</p>
+        </div>
+
+        <!-- 补充场景 + FAQ 摘要 -->
+        <div class="section-card">
+            <h2>常见场景与一点提醒</h2>
+            <p>有段时间我把它设为浏览器新标签页，后来发现其实没必要天天见。现在的方法是：放在书签栏第三位，需要时直接点。既不会忘记，也不会觉得被占据。如果你也在找一个类似的入口，不必刻意安排使用频率，顺其自然就好。</p>
+
+            <div class="faq-preview">
+                <details>
+                    <summary>这个入口每次都指向同一个页面吗？</summary>
+                    <p>是的。它保持当前版本的主要页面结构，不会频繁变动。如果有调整，通常会提前以页面内说明方式告知。</p>
+                </details>
+                <details>
+                    <summary>为什么叫 hth 而不是其他名字？</summary>
+                    <p>域名本身就带有这个缩写。它简短、好记，在众多链接中很容易识别。对长期使用者来说，这个三字母组合已经和稳定入口绑定在一起。</p>
+                </details>
+                <details>
+                    <summary>是否需要登录或注册才能使用？</summary>
+                    <p>不需要。直接打开即可浏览内容。<a href="https://cns-zhcn-hth.com">hth</a> 不设置访问门槛，也不会要求留下任何信息。</p>
+                </details>
+            </div>
+        </div>
+
+        <!-- 页尾访问提示 -->
+        <div class="footnote">
+            <span><strong>杂志专题·入口说明</strong>  —  稳定，从不需要刻意证明。</span>
+            <span>如需直接前往：<a href="https://cns-zhcn-hth.com">hth</a></span>
+        </div>
+
+    </div>
+
+</body>
+</html>
